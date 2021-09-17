@@ -8,8 +8,12 @@ namespace Berek2020
 {
   class Program
   {
+    static List<Dolgozo> dolgozok = new List<Dolgozo>();
+
     static void Main(string[] args)
     {
+
+
     }
   }
 }

@@ -14,9 +14,15 @@ namespace Berek2020
     static void Main(string[] args)
     {
       MasodikFeladat();
+      HarmadikFeladat();
 
 
       Console.ReadKey();
+    }
+
+    private static void HarmadikFeladat()
+    {
+      Console.WriteLine($"3. feladat: Dolgozók száma: {dolgozok.Count} fő");
     }
 
     private static void MasodikFeladat()

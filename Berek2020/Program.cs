@@ -50,23 +50,33 @@ namespace Berek2020
     private static void HatodikFeladat()
     {
       Console.WriteLine("6. feladat: A legtöbbet kereső dolgozó az adott részlegen");
+
       int i = 0;
-      while (dolgozok[i].Reszleg != reszleg)
+      while (i < dolgozok.Count && dolgozok[i].Reszleg != reszleg)
       {
         i++;
       }
-      Dolgozo temp = dolgozok[i];
 
-      while (i < dolgozok.Count)
+      if (i < dolgozok.Count)
       {
-        if (dolgozok[i].Reszleg == reszleg && dolgozok[i].Fizetes > temp.Fizetes)
+
+        Dolgozo temp = dolgozok[i];
+
+        while (i < dolgozok.Count)
         {
-          temp = dolgozok[i];
+          if (dolgozok[i].Reszleg == reszleg && dolgozok[i].Fizetes > temp.Fizetes)
+          {
+            temp = dolgozok[i];
+          }
+          i++;
         }
-        i++;
-      }
 
-      Console.WriteLine(temp.ToString());
+        Console.WriteLine(temp.ToString()); 
+      }
+      else
+      {
+        Console.WriteLine("A megadott részleg nem létezik a cégnél!");
+      }
     }
 
     private static void OtodikFeladat()

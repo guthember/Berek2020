@@ -10,14 +10,21 @@ namespace Berek2020
   class Program
   {
     static List<Dolgozo> dolgozok = new List<Dolgozo>();
-
+    static string reszleg;
     static void Main(string[] args)
     {
       MasodikFeladat();
       HarmadikFeladat();
       NegyedikFeladat();
+      OtodikFeladat();
 
       Console.ReadKey();
+    }
+
+    private static void OtodikFeladat()
+    {
+      Console.Write("5. feladat: Kérem egy részleg nevét: ");
+      reszleg = Console.ReadLine();
     }
 
     private static void NegyedikFeladat()

@@ -15,9 +15,22 @@ namespace Berek2020
     {
       MasodikFeladat();
       HarmadikFeladat();
-
+      NegyedikFeladat();
 
       Console.ReadKey();
+    }
+
+    private static void NegyedikFeladat()
+    {
+      Console.Write("4. feladat: Bérek átlaga:");
+
+      int szum = 0;
+      foreach (var d in dolgozok)
+      {
+        szum += (d.Fizetes);
+      }
+
+      Console.WriteLine($" {Math.Round(((double)szum / 1000) / dolgozok.Count,1 )} eFt");
     }
 
     private static void HarmadikFeladat()

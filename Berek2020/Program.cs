@@ -18,21 +18,52 @@ namespace Berek2020
       NegyedikFeladat();
       OtodikFeladat();
       HatodikFeladat();
+      HetedikFeladt();
 
       Console.ReadKey();
+    }
+
+    private static void HetedikFeladt()
+    {
+      Console.WriteLine("7. feladat: Statisztika");
+
+      Dictionary<string, int> stat = new Dictionary<string, int>();
+
+      foreach (var d in dolgozok)
+      {
+        if (!stat.ContainsKey(d.Reszleg))
+        {
+          stat.Add(d.Reszleg, 1);
+        }
+        else
+        {
+          stat[d.Reszleg]++;
+        }
+      }
+
+      foreach (var s in stat)
+      {
+        Console.WriteLine($"\t{s.Key} - {s.Value} fő");
+      }
     }
 
     private static void HatodikFeladat()
     {
       Console.WriteLine("6. feladat: A legtöbbet kereső dolgozó az adott részlegen");
-      Dolgozo temp = new Dolgozo("t","t","t",0,0);
-
-      foreach (var d in dolgozok)
+      int i = 0;
+      while (dolgozok[i].Reszleg != reszleg)
       {
-        if (d.Reszleg == reszleg && d.Fizetes > temp.Fizetes)
+        i++;
+      }
+      Dolgozo temp = dolgozok[i];
+
+      while (i < dolgozok.Count)
+      {
+        if (dolgozok[i].Reszleg == reszleg && dolgozok[i].Fizetes > temp.Fizetes)
         {
-          temp = d;
+          temp = dolgozok[i];
         }
+        i++;
       }
 
       Console.WriteLine(temp.ToString());

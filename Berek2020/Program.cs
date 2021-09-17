@@ -17,8 +17,25 @@ namespace Berek2020
       HarmadikFeladat();
       NegyedikFeladat();
       OtodikFeladat();
+      HatodikFeladat();
 
       Console.ReadKey();
+    }
+
+    private static void HatodikFeladat()
+    {
+      Console.WriteLine("6. feladat: A legtöbbet kereső dolgozó az adott részlegen");
+      Dolgozo temp = new Dolgozo("t","t","t",0,0);
+
+      foreach (var d in dolgozok)
+      {
+        if (d.Reszleg == reszleg && d.Fizetes > temp.Fizetes)
+        {
+          temp = d;
+        }
+      }
+
+      Console.WriteLine(temp.ToString());
     }
 
     private static void OtodikFeladat()

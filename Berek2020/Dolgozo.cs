@@ -56,5 +56,10 @@ namespace Berek2020
       this.kezdes = kezdes;
       this.fizetes = fizetes;
     }
+
+    public override string ToString()
+    {
+      return $"\tNév: {nev}\n\tNeme: {nem}\n\tBelépés: {kezdes}\n\tBér: {fizetes:C0} Forint";
+    }
   }
 }
